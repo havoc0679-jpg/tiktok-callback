@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset="utf-8"><title>TikTok Auth</title></head>
+<body style="font-family:sans-serif;text-align:center;padding:60px;background:#0a0a14;color:white">
+<h2 style="color:#FFD600">✅ 授權成功！</h2>
+<p>複製下方 Code，貼回程式終端機：</p>
+<input id="code" style="width:80%;padding:12px;font-size:16px;background:#222;color:#FFD600;border:1px solid #FFD600" readonly>
+<br><br>
+<button onclick="navigator.clipboard.writeText(document.getElementById('code').value)" 
+  style="padding:10px 24px;background:#FFD600;border:none;cursor:pointer;font-size:16px">
+  複製 Code
+</button>
+<script>
+  const p = new URLSearchParams(location.search);
+  document.getElementById('code').value = p.get('code') || '找不到 code，請重試';
+</script>
+</body>
+</html>
